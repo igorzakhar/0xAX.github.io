@@ -62,7 +62,7 @@ The second `core.img` file does the main job for us. It contains file system dri
 
 Before we will start to dive into low-level source code of the GNU GRUB. We need to understand how all of this data occurs on a disk of computer. Besides bootloader functions, the GNU GRUB provides a rich set of utils:
 
-![grub-utils](http://s22.postimg.org/z9plrxbld/grub_utils.png)
+![grub-utils](https://habrastorage.org/webt/2_/fx/ar/2_fxar6scc979nqd6n-bywqzwua.png)
 
 And one of this util may help us to install GNU GRUB on a computer. The name of this util is - `grub-install`. As we can read in the `grub-instal` manual page. The `grub-install` util:
 
@@ -432,7 +432,7 @@ functions. These functions takes two parameters: the first is name of a console 
 
 After this we return to the `grub_main ()` function which calls the `grub_load_config()` function. As you can understand from the function's name, it loads configuration file. The next step is loading of GNU GRUB modules which are represented by the [ELF](grub_load_config ();) files in the `/boot/grub/arch`. For example:
 
-![grub-mod](http://s3.postimg.org/bvfh7uatf/elf.png)
+![grub-mod](https://habrastorage.org/webt/_t/ep/rv/_teprvnq96w9nrgrgyf1jbly3kg.png)
 
 After the GNU GRUB kernel will load modules, it sets `root` and `prefix` environment variables which are represent root device and prefix of GNU GRUB directory (by default it is `/boot/grub`), parses configuration file, registers four core command: `ls`, `set`, `unset` and `insmod`. The last step of execution of the `grub_main ()` function is the `grub_load_normal_mode ()` function. This function defined in the same source code file as the `grub_main()` function and it tries to load and execute the `normal` module.
 
